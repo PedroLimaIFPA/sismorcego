@@ -1,22 +1,25 @@
 import React, { Component } from "react";
-import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput, ScrollView } from 'react-native';
 
-class Login extends Component{
+class Recupera extends Component{
   render(){
     return(
     <View style={{flex:1}}>
-   
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.Topo}>
         <Image
         source={require('./src/assets/Logo.png')}
         style={styles.Img}/>
       </View>
 
-      <View style={styles.Login}>
+      
+      <View style={styles.Recupera}>
 
-        <Text style={styles.Titulo}>Login</Text>
+        <Text style={styles.Titulo}>Recuperar senha</Text>
+        <Text style={styles.Descricao}>Insira seu email ou número de celular{'\n'}
+           para procurar a sua conta.</Text>
+
         <TextInput style={styles.Entrada} placeholder="Email"/>
-        <TextInput style={styles.Entrada} placeholder="Senha"/>
 
         <TouchableOpacity style={styles.Botao}>
           <View style={styles.BtnArea}>
@@ -24,17 +27,14 @@ class Login extends Component{
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity>
-        <Text style={styles.Link}>Não possui cadastro ?</Text>
-        </TouchableOpacity>
-
         <TouchableOpacity style={styles.Botao}>
           <View style={styles.BtnArea}>
-            <Text style={styles.BtnTexto}>Criar conta</Text>
+            <Text style={styles.BtnTexto}>Voltar</Text>
           </View>
         </TouchableOpacity>
+        
       </View>
-      
+      </ScrollView>
     </View>
   );
 }
@@ -43,24 +43,26 @@ class Login extends Component{
 
 const styles = StyleSheet.create({
   Topo:{
-    height:100,
+    height:200,
     alignItems:'center',
-    justifyContent:'center',
   },
   Img:{
     width:200,
     height:200,
-    marginTop:100
   },
-  Login:{
+  Recupera:{
     flex:1,
     alignItems:'center',
     justifyContent:'center',  
   },
   Titulo:{
-    fontSize:50,
+    fontSize:45,
     fontWeight:'bold',
     padding:30,
+  },
+  Descricao:{
+    margin:8,
+    fontSize:15
   },
   Entrada:{
     width:300,
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     borderWidth:1,
     borderColor:'black',
     borderRadius:15,
-    margin:15
+    margin:6
   },
   Botao:{
     width:250,
@@ -79,6 +81,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius:0,
     borderBottomRightRadius:20,
     backgroundColor:'#8301d6',
+    margin:8
   },
   BtnArea:{
     flex:1,
@@ -94,11 +97,11 @@ const styles = StyleSheet.create({
   Link:{
     fontSize:15,
     color:'blue',
-    margin:10,
+    margin:8,
     fontStyle:'italic',
     textAlign:'center',
   }
  
 });
 
-export default Login;
+export default Recupera;
