@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput, ScrollView, Picker } from 'react-native';
 
 class Recupera extends Component{
   render(){
@@ -19,7 +19,25 @@ class Recupera extends Component{
         <Text style={styles.Descricao}>Insira seu email ou número de celular{'\n'}
            para procurar a sua conta.</Text>
 
-        <TextInput style={styles.Entrada} placeholder="Email"/>
+        <TextInput style={styles.Entrada} placeholder="Nome do Acs"/>
+        
+        <TextInput style={styles.Entrada} placeholder="Nome do agredido"/>
+        
+        <TextInput style={styles.Entrada} placeholder="DD/MM/AAAA"/>
+        
+      
+
+        <View style={styles.carregar}>
+          <Text>Geolocalização</Text>
+          <TouchableOpacity style={styles.Botao}>
+          <View style={styles.BtnArea}>
+            <Text style={styles.BtnTexto}>Obter</Text>
+          </View>
+        </TouchableOpacity>
+        </View>
+        <TextInput style={styles.Entrada} placeholder="Municipio da agressão"/>
+
+       
 
         <TouchableOpacity style={styles.Botao}>
           <View style={styles.BtnArea}>
@@ -55,6 +73,10 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',  
   },
+  carregar:{
+    flexDirection:'row',
+    justifyContent:'center'
+  },
   Titulo:{
     fontSize:45,
     fontWeight:'bold',
@@ -73,7 +95,7 @@ const styles = StyleSheet.create({
     margin:6
   },
   Botao:{
-    width:250,
+    width:175,
     height:50,
     borderWidth:1,
     borderTopLeftRadius:20,
