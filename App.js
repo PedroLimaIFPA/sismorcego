@@ -1,19 +1,28 @@
 // Rodapé.js
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet,TouchableOpacity, Image, Text } from 'react-native';
 
 const Rodape = () => {
   return (
     <View style={styles.Footer}>
-      <Image 
+      
+      
+
+      <TouchableOpacity>
+        <View>
+        <Image 
         source={require('./src/assets/Logomarca.png')} 
         style={styles.Img} 
       />
+          </View>
+      </TouchableOpacity>
+
       <Text style={styles.NomeLogo}>SISMORCEGO</Text>
+      
       <Image 
         source={require('./src/assets/pedro.png')} 
-        style={styles.Perfil} 
-      />
+        style={styles.Perfil}/>
+    
     </View>
   );
 };
@@ -26,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderTopColor: '#000',
     borderTopWidth: 2,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#20033b',
     paddingHorizontal: 10,
     position: 'absolute',
     bottom: 0,
@@ -39,7 +48,7 @@ const styles = StyleSheet.create({
   NomeLogo: {
     fontSize: 18,
     fontWeight: "bold",
-    color: '#000',
+    color: '#fff',
   },
   Perfil: {
     width: 50,
