@@ -11,7 +11,7 @@ const Rodape = () => {
       <TouchableOpacity>
         <View>
         <Image 
-        source={require('./src/assets/Banco_de_dados.png')} 
+        source={require('../assets/Banco_de_dados.png')} 
         style={styles.Img} 
       />
           </View>
@@ -20,7 +20,7 @@ const Rodape = () => {
       <TouchableOpacity>
         <View>
         <Image 
-        source={require('./src/assets/inserir_branco.png')} 
+        source={require('../assets/inserir_branco.png')} 
         style={styles.Img} 
       />
           </View>

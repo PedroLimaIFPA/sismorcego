@@ -6,12 +6,12 @@ const Cabecalho = () => {
   return (
     <View style={styles.Header}>
       <Image 
-        source={require('./src/assets/Logomarca.png')} 
+        source={require('../assets/Logomarca.png')} 
         style={styles.Img} 
       />
       <Text style={styles.NomeLogo}>SISMORCEGO</Text>
       <Image 
-        source={require('./src/assets/pedro.png')} 
+        source={require('../assets/pedro.png')} 
         style={styles.Perfil} 
       />
     </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 3,
-    borderColor: '#000',
+    borderColor:'#20033b',
   }
 });
 
