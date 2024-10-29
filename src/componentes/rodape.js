@@ -1,19 +1,31 @@
 // Rodapé.js
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet,TouchableOpacity, Image, Text } from 'react-native';
 
 const Rodape = () => {
   return (
     <View style={styles.Footer}>
-      <Image 
-        source={require('./src/assets/Logomarca.png')} 
+      
+      
+
+      <TouchableOpacity>
+        <View>
+        <Image 
+        source={require('./src/assets/Banco_de_dados.png')} 
         style={styles.Img} 
       />
-      <Text style={styles.NomeLogo}>SISMORCEGO</Text>
-      <Image 
-        source={require('./src/assets/pedro.png')} 
-        style={styles.Perfil} 
+          </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <View>
+        <Image 
+        source={require('./src/assets/inserir_branco.png')} 
+        style={styles.Img} 
       />
+          </View>
+      </TouchableOpacity>
+    
     </View>
   );
 };
@@ -22,11 +34,11 @@ const styles = StyleSheet.create({
   Footer: {
     height: 65,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     borderTopColor: '#000',
     borderTopWidth: 2,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#20033b',
     paddingHorizontal: 10,
     position: 'absolute',
     bottom: 0,
@@ -39,7 +51,7 @@ const styles = StyleSheet.create({
   NomeLogo: {
     fontSize: 18,
     fontWeight: "bold",
-    color: '#000',
+    color: '#fff',
   },
   Perfil: {
     width: 50,

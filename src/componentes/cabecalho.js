@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
-const Cabeçalho = () => {
+const Cabecalho = () => {
   return (
     <View style={styles.Header}>
       <Image 
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Cabeçalho;
+export default Cabecalho;

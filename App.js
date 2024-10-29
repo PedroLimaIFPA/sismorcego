@@ -1,62 +1,23 @@
-// Rodapé.js
-import React from 'react';
-import { View, StyleSheet,TouchableOpacity, Image, Text } from 'react-native';
+// App.js
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 
-const Rodape = () => {
-  return (
-    <View style={styles.Footer}>
-      
-      
+// Importa o Cabecalho e o Rodape
+import Cabecalho from './src/componentes/Cabecalho';
+import Rodape from './src/componentes/Rodape';
 
-      <TouchableOpacity>
-        <View>
-        <Image 
-        source={require('./src/assets/Logomarca.png')} 
-        style={styles.Img} 
-      />
-          </View>
-      </TouchableOpacity>
-
-      <Text style={styles.NomeLogo}>SISMORCEGO</Text>
-      
-      <Image 
-        source={require('./src/assets/pedro.png')} 
-        style={styles.Perfil}/>
-    
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  Footer: {
-    height: 65,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderTopColor: '#000',
-    borderTopWidth: 2,
-    backgroundColor: '#20033b',
-    paddingHorizontal: 10,
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-  },
-  Img: {
-    width: 70,
-    height: 60,
-  },
-  NomeLogo: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: '#fff',
-  },
-  Perfil: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 3,
-    borderColor: '#000',
+class App extends Component {
+  render() {
+    return (
+      <View style={{flex:1}}>
+        <Cabecalho />
+        
+        {/* Conteúdo do app pode ser inserido aqui */}
+        
+        <Rodape />
+      </View>
+    );
   }
-});
+}
 
-export default Rodape;
+export default App;
