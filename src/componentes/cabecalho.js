@@ -1,23 +1,84 @@
 // Cabeçalho.js
-import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet, Text, Image, TouchableOpacity, Modal } from 'react-native';
 
-const Cabecalho = () => {
+class Cabecalho extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      modalVisible:false
+    };
+
+    this.abrir_menu = this.abrir_menu.bind(this);
+    this.fechar_menu = this.fechar_menu.bind(this);
+  }
+abrir_menu(){
+this.setState({modalVisible: true})
+}
+
+fechar_menu(visible){
+  this.setState({modalVisible: false})
+  }
+render() {
   return (
     <View style={styles.Header}>
-      <Image 
+      <View><TouchableOpacity><Image 
         source={require('../assets/Logomarca.png')} 
-        style={styles.Img} 
-      />
+        style={styles.Img}/>
+      </TouchableOpacity></View>
+
       <Text style={styles.NomeLogo}>SISMORCEGO</Text>
-      <Image 
+      
+      <View><TouchableOpacity onPress={ this.abrir_menu }><Image 
         source={require('../assets/pedro.png')} 
-        style={styles.Perfil} 
-      />
+        style={styles.Perfil}/> 
+      </TouchableOpacity></View>
+
+      <Modal transparent={true} animationType='slide'visible={this.state.modalVisible}>
+        <View style={styles.Menu}>
+
+          <View style={styles.Topo_Menu}>
+            
+            <Text>Menu de configurações</Text>
+            
+
+            
+            <TouchableOpacity onPress={ this.fechar_menu} style={styles.BtnFechar}><Text>X</Text></TouchableOpacity>
+            
+          
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Conta</Text></TouchableOpacity>
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Sobre o projeto</Text></TouchableOpacity>
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Dúvidas</Text></TouchableOpacity>
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Creditos</Text></TouchableOpacity>
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Configurações</Text></TouchableOpacity>
+          </View>
+
+          <View style={styles.BtnContainer}>
+          <TouchableOpacity><Text style={styles.TextBtn}>Sair</Text></TouchableOpacity>
+          </View>
+
+        </View>
+      </Modal>
+
     </View>
   );
 };
-
+}
 const styles = StyleSheet.create({
   Header: {
     height: 65,
@@ -44,7 +105,41 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 3,
     borderColor:'#20033b',
+  },
+  Topo_Menu:{
+    flexDirection:'row',
+  },
+  Menu:{
+    marginTop:70,
+    backgroundColor: '#f1f123',
+    alignItems:'center',
+    flexDirection:'column',
+    
+    width:280,
+  },
+
+  BtnContainer:{
+    backgroundColor:'#ffff',
+    borderColor:'#3c3c3c',
+    borderWidth:0.2,
+    height:60,
+    width:250,
+    alignItems:'flex-end'
+  },
+  BtnFechar:{
+    backgroundColor:'red',
+    width: 15,
+    height:15,
+    flexDirection:'colum',
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  TextBtn:{
+    fontSize:30,
+    marginRight:19
   }
+
 });
+
 
 export default Cabecalho;

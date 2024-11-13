@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, Platform } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import CheckBox from '@react-native-community/checkbox';
-import Cabecalho from './src/componentes/cabecalho';
-import Rodape from './src/componentes/rodape.js';
+import Cabecalho from './src/componentes/Cabecalho';
+import Rodape from './src/componentes/Rodape';
 
 class Pesquisar extends Component {
   render() {
