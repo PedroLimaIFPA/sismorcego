@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, Platform } from 'react-native';
-import Cabecalho from './src/componentes/Cabecalho';
+import Cabecalho from './src/componentes/cabecalho';
 import Rodape from './src/componentes/Rodape';
 
 class Pesquisar extends Component {
