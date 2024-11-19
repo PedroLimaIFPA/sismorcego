@@ -2,26 +2,28 @@
 import React from 'react';
 import { View, StyleSheet,TouchableOpacity, Image, Text } from 'react-native';
 
-const Rodape = () => {
+import { useNavigation } from '@react-navigation/native';
+
+export default function Rodape(){
+  const navigation = useNavigation();
+
   return (
     <View style={styles.Footer}>
-      
-      
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> navigation.navigate('Pesquisar')}>
         <View>
         <Image 
-        source={require('../assets/Banco_de_dados.png')} 
-        style={styles.Img} 
+        source={require('../../assets/Banco_de_dados.png')} 
+        style={styles.Img}
       />
           </View>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> navigation.navigate('Perguntas')}>
         <View>
         <Image 
-        source={require('../assets/inserir_branco.png')} 
-        style={styles.Img} 
+        source={require('../../assets/inserir_branco.png')} 
+        style={styles.Img}
       />
           </View>
       </TouchableOpacity>
@@ -61,5 +63,3 @@ const styles = StyleSheet.create({
     borderColor: '#000',
   }
 });
-
-export default Rodape;

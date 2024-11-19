@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, Platform } from 'react-native';
-import Cabecalho from './src/componentes/Cabecalho';
-import Rodape from './src/componentes/Rodape';
+import Cabecalho from '../../componentes/cabecalho';
+import Rodape from '../../componentes/rodape';
 
-class Pesquisar extends Component {
-  render() {
+export default function Pesquisar () {
+
     return (
       <View style={{ flex: 1 }}>
         <Cabecalho />
@@ -67,7 +67,7 @@ class Pesquisar extends Component {
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   Formulario: {
@@ -125,4 +125,3 @@ const styles = StyleSheet.create({
     color:'white'
   }
 });
-export default Pesquisar;
