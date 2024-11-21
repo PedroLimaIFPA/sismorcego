@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity, Modal } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 export default function Cabecalho() {
+  const navigation = useNavigation()
+
   // Usando useState para gerenciar o estado do modal
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -39,19 +43,19 @@ export default function Cabecalho() {
             <Text style={{ fontSize: 25, fontWeight: 'bold' }}>X</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnopcoes}>
+          <TouchableOpacity style={styles.btnopcoes} onPress={()=> navigation.navigate('Conta')}>
             <Text style={styles.btnText}>Conta</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnopcoes}>
+          <TouchableOpacity style={styles.btnopcoes} onPress={()=> navigation.navigate('Sobre')}>
             <Text style={styles.btnText}>Sobre o projeto</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnopcoes}>
+          <TouchableOpacity style={styles.btnopcoes} onPress={()=> navigation.navigate('Duvidas')}>
             <Text style={styles.btnText}>Dúvidas</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnopcoes}>
+          <TouchableOpacity style={styles.btnopcoes} onPress={()=> navigation.navigate('Creditos')}>
             <Text style={styles.btnText}>Créditos</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnopcoes}>
+          <TouchableOpacity style={styles.btnopcoes} onPress={()=> navigation.navigate('Configuracoes')}>
             <Text style={styles.btnText}>Configurações</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnopcoes}>
