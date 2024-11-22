@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 
 import Cabecalho from "../../componentes/cabecalho";
 import Rodape from "../../componentes/rodape";
@@ -9,17 +9,29 @@ export default function Sobre(){
   return(
     <View style={{ flex: 1 }}>
       <Cabecalho/>
-      <View style={styles.feed}>
-        <Text style={styles.Titulo}>Sobre</Text>
+      <View style={styles.Feed}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <Text style={styles.Titulo}>Sobre</Text>
+        
+              <View style={styles.ContainerFeed}>
+              <Image source={require('../../assets/programacao.jpg')} style={styles.Imgfeed} />
+              <Text style={styles.Textofeed}>Reunião de requisitos do projeto</Text>
+              </View>
+
+              <View style={styles.ContainerFeed}>
+              <Image source={require('../../assets/reuniao.png')} style={styles.Imgfeed} />
+              <Text style={styles.Textofeed}>Reunião para elaboração de estrategias no ambito saude no combate a raiva</Text>
+              </View>
+          </ScrollView>
         </View>
       <Rodape/>
     </View>
   )
 }
 const styles = StyleSheet.create({
-    feed: {
+    Feed: {
       flex: 1,
-      alignItems: 'center',
+      alignItems:'center',
       justifyContent: 'flex-start',
       marginBottom: 100,
     },
@@ -27,19 +39,23 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       padding: 30,
+      textAlign:'center',
+      color:'black'
     },
-    FeedContainer:{
-    width:400,
-    height:300,
-    backgroundColor:'#725468'
+    ContainerFeed:{
+      marginBottom:30,
+      width:350,
+      height:300,
     },
     Imgfeed:{
       padding:50,
-      height:250,
-      width:300
+      height:200,
+      width:350,
+      borderRadius:15
     },
     Textofeed:{
-      fontSize:15,
-      
+      padding:10,
+      fontSize:25,
+      color:'black'
     }
 })
