@@ -2,13 +2,13 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Importando as páginas/telas
-import Perguntas from "../paginas/perguntas/Index";
-import Pesquisar from "../paginas/pesquisar/Index";
+import Perguntas from "../paginas/perguntas";
+import Pesquisar from "../paginas/pesquisar";
 import Conta from "../paginas/conta";
 import Sobre from "../paginas/Sobre";
 import Duvidas from "../paginas/Duvidas";
 import Creditos from "../paginas/creditos";
-import Configuracoes from "../paginas/configuracoes/Index";
+import Configuracoes from "../paginas/configuracoes";
 
 const Stack = createNativeStackNavigator();
 

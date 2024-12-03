@@ -1,43 +1,52 @@
-// Rodapé.js
-import React from 'react';
-import { View, StyleSheet,TouchableOpacity, Image, Text } from 'react-native';
-
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, TouchableOpacity, Image, Keyboard, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Rodape(){
+export default function Rodape() {
   const navigation = useNavigation();
+  const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
+      setKeyboardVisible(true);
+    });
+    const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardVisible(false);
+    });
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
 
   return (
-    <View style={styles.Footer}>
+    !isKeyboardVisible && (
+      <View style={styles.Footer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Pesquisar')}>
+          <Image 
+            source={require('../../assets/Banco_de_dados.png')} 
+            style={styles.Img}
+          />
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=> navigation.navigate('Pesquisar')}>
-        <View>
-        <Image 
-        source={require('../../assets/Banco_de_dados.png')} 
-        style={styles.Img}
-      />
-          </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={()=> navigation.navigate('Perguntas')}>
-        <View>
-        <Image 
-        source={require('../../assets/inserir_branco.png')} 
-        style={styles.Img}
-      />
-          </View>
-      </TouchableOpacity>
-    
-    </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Perguntas')}>
+          <Image 
+            source={require('../../assets/inserir_branco.png')} 
+            style={styles.Img}
+          />
+        </TouchableOpacity>
+      </View>
+    )
   );
-};
+}
 
 const styles = StyleSheet.create({
   Footer: {
     height: 65,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     borderTopColor: '#000',
     borderTopWidth: 2,
     backgroundColor: '#20033b',
@@ -50,16 +59,4 @@ const styles = StyleSheet.create({
     width: 70,
     height: 60,
   },
-  NomeLogo: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: '#fff',
-  },
-  Perfil: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 3,
-    borderColor: '#000',
-  }
 });

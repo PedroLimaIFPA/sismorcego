@@ -55,10 +55,11 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',  
   },
-  Titulo:{
-    fontSize:45,
+  Titulo: {
+    fontSize: 24,
     fontWeight:'bold',
-    padding:30,
+    padding: 30,
+    color:'black'
   },
   Descricao:{
     margin:8,

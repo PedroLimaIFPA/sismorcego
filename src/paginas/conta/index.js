@@ -14,7 +14,7 @@ export default function Conta() {
 
           <View style={styles.Fundoimgfeed}>
             <TouchableOpacity>
-              <Image source={require('../../assets/Sem_perfil.png')} style={styles.Imgfeed} />
+              <Image source={require('../../assets/pedro.png')} style={styles.Imgfeed} />
             </TouchableOpacity>
           </View>
 
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   Imgfeed: {
-    height: 60,
-    width: 60,
+    height: 80,
+    width: 80,
     borderRadius: 40,
   },
   FeedContainer: {

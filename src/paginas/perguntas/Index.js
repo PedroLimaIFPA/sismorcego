@@ -122,7 +122,7 @@ export default function Perguntas() {
                 </View>
 
                 <View style={styles.Containerbotoes}>
-                <Text style={{color:'#8301d6'}}>Geolocalização</Text>
+                <Text style={{color:'#8301d6', fontSize:20, fontWeight:'bold'}}>Geolocalização</Text>
                   <TouchableOpacity style={styles.Botao}>
                     <View style={styles.BtnArea}>
                       <Text style={styles.BtnTexto}>Obter</Text>
@@ -135,10 +135,16 @@ export default function Perguntas() {
                 <TextInput style={styles.Entrada} placeholder="Digite o municipio da agressão" />
 
                 <View style={styles.Containerbotoes}>
-                <Text style={{color:'#8301d6'}}>Fotos</Text>
+                <Text style={{color:'#8301d6', fontSize:20, fontWeight:'bold'}}>Fotos</Text>
                   <TouchableOpacity style={styles.Botao}>
                     <View style={styles.BtnArea}>
                       <Text style={styles.BtnTexto}>Carregar</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.Botao}>
+                    <View style={styles.BtnArea}>
+                      <Text style={styles.BtnTexto}>Tirar</Text>
                     </View>
                 </TouchableOpacity>
                 </View>
@@ -199,6 +205,12 @@ export default function Perguntas() {
                     ))}
                   </View>
 
+                  <TouchableOpacity style={[styles.Botao, { width: 280, height: 60, marginTop:25 }]}>
+                    <View style={styles.BtnArea}>
+                      <Text style={styles.BtnTexto}>Enviar Formulario</Text>
+                    </View>
+                  </TouchableOpacity>
+
             </View>
           </ScrollView>
         <Rodape/>
@@ -213,18 +225,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 100,
+    paddingVertical: 10, // Adiciona um pequeno padding para mais espaçamento geral
   },
   Titulo: {
     fontSize: 24,
     fontWeight: 'bold',
     padding: 30,
+    color:'black'
   },
   Descricao: {
     marginTop: 10,
+    marginBottom: 20, // Adiciona mais espaçamento entre as perguntas
     width: 260,
     alignItems: 'flex-start',
-    color:'#8301d6'
-  },
+    color: '#8301d6',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },  
   Entrada: {
     width: 300,
     height: 50,
@@ -298,6 +315,6 @@ const styles = StyleSheet.create({
   },
   checkboxLabel: {
     marginLeft: 8,
-    color: '#8301d6',
+    color: 'black',
   },
 });

@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
   },
   Titulo: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight:'bold',
     padding: 30,
+    color:'black'
   },
   Descricao: {
     marginTop: 10,

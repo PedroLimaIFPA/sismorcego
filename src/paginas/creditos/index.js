@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
   },
   Titulo: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight:'bold',
     padding: 30,
-    color: 'black',
+    color:'black',
   },
   ItemContainer: {
     flexDirection: 'row', // Coloca os elementos lado a lado

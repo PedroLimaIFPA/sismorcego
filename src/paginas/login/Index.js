@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   Login:{
     flex:1,
     alignItems:'center',
-    justifyContent:'center',  
+    justifyContent:'center',
+    color:'black'  
   },
   Titulo:{
     fontSize:50,

@@ -54,10 +54,11 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',  
   },
-  Titulo:{
-    fontSize:50,
+  Titulo: {
+    fontSize: 24,
     fontWeight:'bold',
-    padding:30,
+    padding: 30,
+    color:'black'
   },
   Entrada:{
     width:300,
