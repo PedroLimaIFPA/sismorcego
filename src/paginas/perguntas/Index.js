@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import CheckBox from '@react-native-community/checkbox';
 import Cabecalho from '../../componentes/cabecalho';
 import Rodape from '../../componentes/rodape';
@@ -56,6 +57,42 @@ export default function Perguntas() {
     let year = date.getFullYear();
     return `${day}/${month}/${year}`;
   };
+
+
+  function openAlbum(){
+    const options = {
+      mediaType:"photo",
+      quality:1,
+      selectionLimit:1
+    }
+    launchImageLibrary(options, (response) =>{
+    
+      if(response.didCancel){
+        console.log("IMAGE PICKER CANCELADO")
+        return;
+      }else if(response.error){
+        console.log("GEROU ERRO ", response.errorMessage)
+        return;
+      }
+
+      console.log(response.assets)
+      
+    })
+
+  }
+
+  async function openCamera(){
+
+    const options = {
+      mediaType:"photo",
+      quality:1,
+      saveToPhotos:true,
+    }
+
+    const response = await launchCamera(options)
+    
+    console.log(response.assets);
+  }
 
     return (
       <View style={{ flex: 1 }}>
@@ -136,13 +173,13 @@ export default function Perguntas() {
 
                 <View style={styles.Containerbotoes}>
                 <Text style={{color:'#8301d6', fontSize:20, fontWeight:'bold'}}>Fotos</Text>
-                  <TouchableOpacity style={styles.Botao}>
+                  <TouchableOpacity style={styles.Botao}  onPress={openAlbum}>
                     <View style={styles.BtnArea}>
                       <Text style={styles.BtnTexto}>Carregar</Text>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.Botao}>
+                <TouchableOpacity style={styles.Botao}  onPress={openCamera}>
                     <View style={styles.BtnArea}>
                       <Text style={styles.BtnTexto}>Tirar</Text>
                     </View>
